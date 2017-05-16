@@ -1,0 +1,15 @@
+/* pages/rules/rules.wxss */
+
+.wrapper{
+    width: 710rpx;height: auto;overflow: hidden;margin: auto;
+    position: relative;
+}
+
+.title{
+    display: block;
+    font-size: 30rpx;color: #282828;margin: 40rpx 0 26rpx 0;
+}
+.list{
+    display: block;font-size: 26rpx;color: #888;margin-bottom: 14rpx;
+    line-height: 50rpx;
+}

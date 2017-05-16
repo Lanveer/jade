@@ -1,0 +1,19 @@
+{
+    "pages": [
+         
+        "pages/index/index",
+        "pages/rules/rules",
+        "pages/deposit/deposit",
+        "pages/miao/miao",
+        "pages/num/num",
+        "pages/detail/detail",
+        "pages/account/account",
+        "pages/success/success",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#d02927",
+        "navigationBarTextStyle": "white"
+    }
+}

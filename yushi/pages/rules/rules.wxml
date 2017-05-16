@@ -1,0 +1,8 @@
+<!--pages/rules/rules.wxml-->
+<view class="wrapper">
+     <text class="title">秒拍规则</text>
+     <!--<block wx:for="rules">-->
+     <text class="list">{{rules}}</text>
+     <!--</block>-->
+
+</view>

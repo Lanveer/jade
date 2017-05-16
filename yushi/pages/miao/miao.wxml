@@ -1,0 +1,121 @@
+
+<!--pages/miao/miao.wxml-->
+
+<!--banner 開始-->
+<view class="banner">
+  <swiper indicator-dots="true" autoplay="true">
+    <block wx:for="{{banner}}">
+      <swiper-item>
+        <image src="{{item.path}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!--banner结束-->
+
+<!--详情开始-->
+<view class="wrapper">
+  <view class="content">
+    <view class="con-img">
+      <image src="{{detail.shop_cover}}"></image>
+    </view>
+    <view class="detail">
+      <text class="title">{{detail.shop_name}}</text>
+      <view class="price-store">
+        市场价:
+        <text class="price">{{detail.shop_price}}元</text>
+        库存:
+        <text class="store">{{detail.shop_stock}}件</text>
+      </view>
+      <view class="calc">
+        <view class="hour">{{hour}}</view>
+        <text class='sign'>:</text>
+        <view class="minite">{{minute}}</view>
+        <text class='sign'>:</text>
+        <view class="seconds">{{second}}</view>
+      </view>
+      <view class="money-box">
+        <view class="money-tip">实时滚动价位</view>
+        <text class="money">{{num1}}</text>
+      </view>
+      <!--<view class="start" wx:if="{{hadclick}}">秒点开始</view>-->
+      <view class="start" bindtap="stopAnimate" wx:if="{{hasclick}}">停</view>
+      <view class="start" bindtap="animate" wx:else="{{hasclick}}" data-shopId="{{shop_id}}">秒点开始</view>
+    </view>
+  </view>
+</view>
+
+<!--详情结束-->
+
+
+    <!--实时成交记录开始-->
+    <view class="record" wx:if="{{flag==1}}">
+        <view class="record-title">实时成交记录</view>
+        <block wx:for="{{record}}">
+            <view class="list">
+                <text class="name">{{item.name}}</text>
+                <text class="price">{{item.num}}</text>
+            </view>
+        </block>
+    </view>
+    <!--实时成交记录结束-->
+
+
+    <!--退还剩余开始-->
+    <view class="rest" wx:elif="{{flag==2}}">
+        <view class="rest-header">
+            <image src="../../images/miao/cong.png"></image>
+            <text>{{num1Complete}}!</text>
+        </view>
+
+        <view class="rest-body">
+            <view class="rest-money">退还剩余金额:<text>￥10.00</text></view>
+            <text class="rest-tips">请添加微信号联系退款,客服微信号:<text class='weixin'>店小二</text></text>
+        </view>
+
+        <form class="rest-form">
+            <input type="text" placeholder="请输入收款人微信号" placeholder-class="place" />
+            <input type="text" placeholder="姓名" placeholder-class="place" />
+            <input type="text" placeholder="请填写联系人电话" placeholder-class="place" />
+            <input type="text" placeholder="请填写收货地址" placeholder-class="place" />
+        </form>
+        <button class="confirm"> 确定</button>
+
+    </view>
+    <!--退还剩余结束-->
+
+
+    <!--补交剩余开始-->
+    <view class="rest pay" wx:elif="{{flag==3}}">
+        <view class="rest-header">
+            <image src="../../images/miao/cong.png"></image>
+            <text>恭喜您获得本产品!</text>
+        </view>
+
+        <view class="rest-body">
+            <view class="rest-money">补交剩余金额:<text>￥10.00</text></view>
+        </view>
+
+        <form class="rest-form">
+            <input type="text" placeholder="姓名" placeholder-class="place" />
+            <input type="text" placeholder="电话" placeholder-class="place" />
+            <input type="text" placeholder="地址" placeholder-class="place" />
+        </form>
+        <button class="confirm"> 确定</button>
+
+    </view>
+    <!--补交剩余结束-->
+
+
+<!--占位符开始-->
+<!--<view class="flag"></view>-->
+<!--占位符结束-->
+
+<!--footer开始-->
+<view class="footer">
+  <navigator class="delt" url="../success/success?shop_id={{shop_id}}" open-type="navigate">已成交查询</navigator>
+  <view class="delt pay" bindtap="pay" data-shopId="{{shop_id}}">提交保证金</view>
+</view>
+
+<!--footer结束-->

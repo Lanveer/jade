@@ -1,0 +1,194 @@
+/* pages/miao/miao.wxss */
+
+page{margin: 0;padding: 0;background: #ededed;}
+.banner{
+    width: 100%;height:248rpx;
+}
+.banner image {
+    width: 100%;height: 100%;
+}
+
+.banner swiper{
+   height:248rpx; 
+}
+
+.wrapper{
+    width: 100%;height: auto;overflow: hidden;background: #ededed;
+}
+
+.content{
+    width: 710rpx;height: 880rpx;overflow: hidden;position: relative;background: #fff;
+    margin: 14rpx auto;margin-bottom: 90rpx;
+}
+
+.con-img{
+    width: 100%;height: 500rpx;
+}
+.con-img image{width: 100%;height: 100%;}
+
+.detail{
+    text-align: center
+}
+.title{font-size: 30rpx;margin: 14rpx auto;color: #282828;font-weight: bold;}
+.price-store{font-size: 26rpx;color: #353535;}
+
+.calc{
+    width: 204rpx;height: 40rpx;
+    margin:14rpx auto;
+    display: flex;flex-direction: row;
+    vertical-align: middle;align-items: center;
+}
+.hour,.minite,.seconds{
+    width: 56rpx;height: 40rpx;border: 1rpx solid #e8e8e8;
+    font-size: 30rpx;color: #282828;text-align: center;              line-height: 40rpx;
+}
+
+.sign{
+    margin: 0 5rpx 0 5rpx;
+}
+
+
+.money-box{
+    width: 334rpx;height: 94rpx;
+    background: #ffbe18;border-radius:50rpx;
+    margin: 40rpx auto 0;position: relative;
+}
+.money-tip{
+    width: 160rpx;height: 38rpx;
+    background: #fff30c;border-radius: 50rpx;
+    position: absolute;
+    top: -19rpx;left: 50%;margin-left: -80rpx;
+    font-size: 20rpx;color: #d02927;text-align: center;              line-height: 38rpx;
+}
+
+.money{
+    font-size: 48rpx;color: #d02927;text-align: center;     line-height: 94rpx;
+}
+.start{
+    width: 270rpx;height: 60rpx;border: 2rpx solid #d02927;
+    text-align: center;line-height: 60rpx;
+    color: #d02927;font-size: 30rpx;border-radius: 6rpx;
+    margin: 24rpx auto 12rpx;
+}
+
+.flag{width: 100%;height: 1rpx;margin-bottom: 95rpx;}
+
+.footer{
+    width: 100%;height: 90rpx;
+    position: fixed;z-index: 9999;
+    background: #fff;
+    bottom: 0;display: flex;flex-direction: row;
+    justify-content: space-around;
+}
+
+.delt{
+    width: 375rpx;height: 90rpx;background: #f4910a;color: #fff;
+    font-size: 28rpx;text-align: center;line-height: 90rpx;
+}
+.pay{ background: #d02927;}
+
+
+
+
+/*记录开始*/
+.record {
+    width: 710rpx;
+    height: 390rpx;
+    margin: 20rpx auto;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.record-title {
+    font-size: 28rpx;
+    color: #282828;
+    margin: 30rpx 0 30rpx 20rpx;
+}
+
+.list {
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 28rpx;
+    color: #b2b2b2;
+    margin-left: 20rpx;
+}
+
+.price {
+    font-size: 24rpx;
+    color: #353535;
+    margin-right: 20rpx;
+}
+
+
+/*记录结束*/
+
+/*补交剩余开始*/
+
+.rest {
+    width: 710rpx;
+    height: auto;
+    margin: 20rpx auto;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.rest-header {
+    height: 60rpx;
+    font-size: 30rpx;
+    color: #ff3e43;
+    text-align: center;
+    margin-top: 16rpx;
+    position: relative;
+}
+
+.rest-header image {
+    width: 50rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 25%;
+}
+
+.rest-header text {
+    font-size: 30rpx;
+    color: #ff3e43;
+    text-align: center;
+    line-height: 60rpx;
+}
+.rest-body{
+    width: 670rpx;
+    margin: 20rpx auto 15rpx;
+}
+
+.rest-money{
+    font-size: 28rpx;color: #353535;
+}
+.rest-money  text{color: #d02927;}
+
+.rest-tips{
+    font-size: 24rpx;color: #e65217
+}
+
+
+.rest-form input{
+    width: 670rpx;height: 90rpx;background: #eaeaea;
+    margin: 0 auto 24rpx;
+}
+.place{
+    font-size: 26rpx;color: #888888;padding-left: 20rpx;
+}
+.confirm{
+    width: 665rpx;height: 66rpx;background: #d02927;text-align: center;line-height: 66rpx;
+    font-size: 26rpx;color: #fff;
+}
+
+/*补交剩余结束*/

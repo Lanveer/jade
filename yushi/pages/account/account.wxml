@@ -1,0 +1,110 @@
+<!--pages/account/account.wxml-->
+
+<!--banner 開始-->
+<view class="banner">
+    <swiper indicator-dots="true" autoplay="true">
+        <block wx:for="{{banner}}">
+            <swiper-item>
+                <image src="{{item.path}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!--banner结束-->
+
+
+
+<view class="wrapper">
+    <!--详情开始-->
+    <view class="content">
+        <view class="con-img">
+            <image src="{{detail.shop_cover}}"></image>
+        </view>
+        <view class="detail">
+            <text class="title">{{detail.shop_name}}</text>
+            <view class="price-store">
+                成交次数: <text class="price">{{detail.count}}次</text> 库存: <text class="store">{{detail.shop_stock}}件</text>
+            </view>
+            <view class="calc">
+                <view class="hour">{{hour}}</view>
+                <text class='sign'>:</text>
+                <view class="minite">{{minute}}</view>
+                <text class='sign'>:</text>
+                <view class="seconds">{{second}}</view>
+            </view>
+
+            <view class="money-box">
+                <view class="money-tip">实时滚动价位</view>
+                <text class="money">{{num1}}</text>
+            </view>
+
+            <view class="start" bindtap="stopAnimate" wx:if="{{hasclick}}">停</view>
+            <view class="start" bindtap="animate" wx:else="{{hasclick}}" data-shopId="{{shop_id}}">开始</view>
+
+        </view>
+
+    </view>
+    <!--详情结束-->
+
+    <!--实时成交记录开始-->
+    <view class="record"wx:if="{{flag==1}}">
+        <view class="record-title">实时成交记录</view>
+        <view class="tips" wx:if="{{noTips}}">暂时没有成交数据！</view>
+        <block wx:for="{{record}}">
+            <view class="list">
+                <text class="name">{{item.name}}</text>
+                <text class="price">￥{{item.num}}</text>
+            </view>
+        </block>
+    </view>
+    <!--实时成交记录结束-->
+
+
+    <!--退还剩余开始-->
+    <view class="rest" wx:elif="{{flag==2}}">
+        <view class="rest-header">
+            <image src="../../images/miao/cong.png"></image>
+            <text>恭喜那你获得本产品!</text>
+        </view>
+
+        <view class="rest-body">
+            <view class="rest-money">退还剩余金额:<text>￥{{difference1}}</text></view>
+            <text class="rest-tips">请添加微信号联系退款,客服微信号:<text class='weixin'>18338378188</text></text>
+        </view>
+
+        <form class="rest-form" bindsubmit="formSubmit">
+            <input type="text" name="wx_code" placeholder="请输入收款人微信号" placeholder-class="place" />
+            <input type="text" name="name" placeholder="姓名" placeholder-class="place" />
+            <input type="text" name="tel" placeholder="请填写联系人电话" placeholder-class="place" />
+            <input type="text" name="address" placeholder="请填写收货地址" placeholder-class="place" />
+             <button class="confirm" formType="submit" > 确定</button>
+        </form>
+       
+
+    </view>
+    <!--退还剩余结束-->
+
+
+    <!--补交剩余开始-->
+    <view class="rest pay" wx:else="{{flag==3}}">
+        <view class="rest-header">
+            <image src="../../images/miao/cong.png"></image>
+            <text>恭喜您获得本产品!</text>
+        </view>
+
+        <view class="rest-body">
+            <view class="rest-money">补交剩余金额:<text>￥{{difference2}}</text></view>
+        </view>
+
+        <form class="rest-form" bindsubmit="formSubmit2">
+            <input type="text" name="name" placeholder="姓名" placeholder-class="place" />
+            <input type="text" name="tel" placeholder="电话" placeholder-class="place" />
+            <input type="text"  name="address" placeholder="地址" placeholder-class="place" />
+            <button class="confirm" form-type="submit" bindtap="pay"> 确定</button>
+        </form>
+        
+
+    </view>
+    <!--补交剩余结束-->
+
+</view>

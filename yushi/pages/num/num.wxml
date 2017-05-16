@@ -1,0 +1,27 @@
+<!--pages/num/index.wxml-->
+<view class="animate-number">
+    <view class="num num1">{{leftradom}}{{num1}}{{rightrandom}}</view>
+    <view>
+        {{num1Complete}}
+    </view>
+
+    
+    <view class="btn-box">
+        <button wx:if="{{hasclick}}" bindtap="stopAnimate"  type="warn" class="button">停止</button>
+        <button wx:else bindtap="animate"  type="primary" class="button">开始</button>
+    </view>
+    
+</view>
+
+
+
+
+<!--test-->
+
+  <scroll-view scroll-y="true" style="height: 500rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class=""></view>
+    <view id="red"  class=""></view>
+    <view id="yellow" class=""></view>
+    <view id="blue" class="scroll-view-item bc_blue"></view>
+  </scroll-view>
+<!--test-->

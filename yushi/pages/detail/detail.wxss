@@ -1,0 +1,86 @@
+/* pages/detail/detail.wxss */
+page{
+    margin: 0;
+    padding: 0;
+    background: #ededed;
+    }
+
+.listScrollView {
+  width: 750rpx;
+  height: 1140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  margin-bottom: 90rpx;
+}
+
+.banner{
+    width: 100%;height:248rpx;
+}
+.banner image {
+    width: 100%;height: 100%;
+}
+
+.banner swiper{
+   height:248rpx; 
+}
+
+.imgs{
+    width: 710rpx;height: auto;overflow: hidden;
+    margin: 24rpx auto 30rpx;
+}
+.img{
+    width: 230rpx;height: 230rpx;
+    float:left;margin-right: 10rpx;margin-bottom: 10rpx;
+}
+.img:nth-child(3n){margin-right: 0;}
+.img image{width: 100%;height: 100%;}
+
+.params{
+    width: 710rpx;height: auto;overflow: hidden;margin: auto;
+}
+
+.nomal-price{
+    font-size: 30rpx;color: #d02927;
+}
+
+.param-container{
+    width: 710rpx;height: auto;overflow: hidden;margin: auto;padding-bottom: 30rpx;
+}
+
+.param{
+    width: 40%;float: left;font-size: 26rpx;color: #888;margin-top: 24rpx;
+}
+.top-container{
+    width:100%;height: auto;overflow: hidden;background: #fff;position: relative;
+}
+
+.down-container{
+       width:100%;height: auto;overflow: hidden;background: #fff;margin-top: 14rpx;
+       margin-bottom: 95rpx;
+}
+
+.des{
+    width: 710rpx;height: auto;overflow: hidden;margin:30rpx auto 0;background: #fff;
+}
+
+.des-title{font-size: 30rpx;color: #282828;font-weight: bold;display: block;}
+
+.des-info{
+    font-size: 26rpx;color: #353535;line-height: 160%;
+}
+
+.footer{
+    width: 100%;height: 90rpx;
+    position: fixed;z-index: 9999;
+    background: #fff;
+    bottom: 0;display: flex;flex-direction: row;
+    justify-content: space-around;
+}
+
+.enter{
+    width: 375rpx;height: 90rpx;background: #f4910a;color: #fff;
+    font-size: 28rpx;text-align: center;line-height: 90rpx;
+}
+.rules{ background: #d02927;}

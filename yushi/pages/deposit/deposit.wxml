@@ -1,0 +1,39 @@
+    <!--banner 開始-->
+    <view class="banner">
+      <swiper indicator-dots="true" autoplay="true">
+        <block wx:for="{{banner}}">
+          <swiper-item>
+            <image src="{{item.path}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--banner结束-->
+
+
+    <!--内容开始-->
+    <view class="content">
+        <view class='header'>
+            <text class="header-left">{{title}}</text>
+            <view class="deposit">保证金:<text class="money">￥{{money}}</text></view>
+        </view>
+
+        <view class='body'>
+            <view class="title">实时成交记录</view>
+            <scroll-view scroll-y="true" style="height:300px;;">
+              <block wx:for="{{record}}">
+                <view class="scroll">
+                     <text class="name">{{item.name}}</text> 
+                     <text class="num">￥{{item.deal_price}}</text>
+                </view>
+                </block> 
+                <view class="tips" wx:if="{{showTips}}">暂时没有和成交信息,敬请期待！</view> 
+            </scroll-view>
+        </view> 
+    </view>
+    <!--内容结束-->
+
+
+    <!--支付保证金开始-->
+<view class="paying" bindtap="pay">支付保证金 </view>
+    <!--支付保证金结束-->

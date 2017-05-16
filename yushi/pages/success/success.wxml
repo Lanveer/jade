@@ -1,0 +1,30 @@
+
+<!--pages/success/success.wxml-->
+<view class="wrapper">
+  <block wx:for="{{list}}">
+
+    <view class="list" wx:if="{{myuid !==item.uid}}">
+      <text class="tags">{{item.shop_name}}</text>
+      <view class="results">实时秒拍
+        <text class="price">￥{{item.deal_price}}</text>
+      </view>
+      <view class="user">
+        <text class="user-add">{{item.address}}</text>
+        <text class="user-name">{{item.user_name}}</text>
+        <text class="user-tel">{{item.tel}}</text>
+      </view>
+    </view>
+
+    <view class="list" wx:if="{{myuid==item.uid}}">
+      <text class="tags" wx:if="{{myuid == item.uid}}" style="color:red;">{{item.shop_name}}</text>
+      <view class="results" wx:if="{{myuid == item.uid}}" style="color:red;">实时秒拍
+        <text class="price">￥{{item.deal_price}}</text>
+      </view>
+      <view class="user" wx:if="{{myuid == item.uid}}" style="color:red;">
+        <text class="user-add">{{item.address}}</text>
+        <text class="user-name">{{item.user_name}}</text>
+        <text class="user-tel">{{item.tel}}</text>
+      </view>
+    </view>
+  </block>
+</view>

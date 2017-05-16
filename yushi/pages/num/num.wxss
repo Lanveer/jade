@@ -1,0 +1,27 @@
+/* pages/num/index.wxss */
+.animate-number{text-align: center;padding-top: 100rpx}
+.num{margin: 20rpx;font-size: 48rpx}
+.num.num1{color: #576b95}
+.num.num2{color: #09bb07}
+.num.num3{color: #e64340}
+
+.btn-box{margin-top: 250rpx}
+
+.button{width: 400rpx;font-size: 36rpx}
+
+
+/*test*/
+
+
+#green{
+    width: 100%;height: 200rpx;background: green;
+}
+#red{
+    width: 100%;height: 200rpx;background: red;
+}
+#yellow{
+    width: 100%;height: 200rpx;background: yellow;
+}
+#blue{
+    width: 100%;height: 200rpx;background: blue;
+}

@@ -1,0 +1,74 @@
+<view class="top-container">
+<scroll-view class="listScrollView" scroll-y="true" bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper">
+  <!--banner 開始-->
+  <view class="banner">
+    <swiper indicator-dots="true" autoplay="true">
+      <block wx:for="{{banner}}">
+        <swiper-item>
+          <image src="{{item.path}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--banner结束-->
+
+  <!--图片开始-->
+  <view class="imgs">
+    <block wx:for="{{listimg}}">
+      <view class="img">
+        <image src="{{item.imgurl}}" bindtap="viewImg" data-index="{{index}}"></image>
+      </view>
+    </block>
+  </view>
+
+  <!--图片结束-->
+
+  <!--参数开始-->
+  <view class="params">
+    <view class="nomal-price">市场价:
+      <text class="price">￥{{params.price}}</text>
+    </view>
+    <view class="param-container">
+      <view class='param'>长度:
+        <text class="size">{{params.length}}cm</text>
+      </view>
+       <view class='param'>高度:
+        <text class="size">{{params.height}}cm</text>
+      </view>
+       <view class='param'>宽度:
+        <text class="size">{{params.width}}cm</text>
+      </view>
+      <view class='param'>材质:
+        <text class="size">{{params.materal}}</text>
+      </view>
+      <view class='param'>重量:
+        <text class="size">{{params.weight}}g</text>
+      </view>
+      <view class='param'>库存:
+        <text class="size">{{params.store}}件</text>
+      </view>
+    </view>
+  </view>
+  <!--参数结束-->
+
+<view class="down-container">
+
+  <!--商品描述开始-->
+  <view class="des">
+    <text class="des-title">商品描述</text>
+    <text class="des-info">{{params.info}}</text>
+  </view>
+
+  <!--商品描述结束-->
+</view>
+
+</scroll-view>
+</view>
+<!--footer开始-->
+<view class="footer">
+  <navigator class="enter" url="../miao/miao?shop_id={{shop_id}}" open-type="navigate">进入秒拍滚动</navigator>
+  <navigator url="../rules/rules" open-type="navigate" class="enter rules">秒拍规则</navigator>
+</view>
+
+<!--footer结束-->

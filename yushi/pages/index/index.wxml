@@ -1,0 +1,125 @@
+
+<!--container begin-->
+<view class="container">
+  <scroll-view class="listScrollView" scroll-y="true" bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper">
+
+    <!--banner begin-->
+    <view class="banner">
+      <swiper indicator-dots="true" autoplay="true">
+        <block wx:for="{{banner}}">
+          <swiper-item>
+            <image src="{{item.path}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--banner over-->
+
+    <!--秒拍专场开始-->
+    <view class="buy">
+      <view class="buy-left">
+        <image src="../../images/index/buy.png"></image>
+        <view class="calc">
+          <view class="hour">{{hour}}</view>
+          <text class='sign'>:</text>
+          <view class="minite">{{minute}}</view>
+          <text class='sign'>:</text>
+          <view class="seconds">{{second}}</view>
+        </view>
+      </view>
+      <text class="buy-right">{{title}}</text>
+    </view>
+
+    <!--秒拍专场结束-->
+
+    <!--循环列表开始-->
+    <block wx:for="{{listData}}">
+      <view class="adv">
+        <image src="{{item.advertimg}}"></image>
+      </view>
+      <view class='best'>
+        <view class="common-header">
+
+          <!--<view class='hr-left'></view>
+            <view class="hr-title">精品区</view>
+            <view class='hr-right'></view>-->
+          <image src="{{item.categoryimg}}"></image>
+        </view>
+        <view class="list-container">
+
+          <!--循环列表数据开始-->
+          <block wx:for="{{item.shop}}">
+            <view class="commom-list">
+
+              <!--<navigator url="../detail/detail?shop_id={{item.id}}" open-type="navigate" class='list-img'>
+                <image src="{{item.shop_cover}}"></image>
+              </navigator>-->
+
+              <!--test-->
+              <view class='list-img' bindtap="transfer" data-shopid='{{item.id}}' data-stock="{{item.shop_stock}}">
+                <image class="soldout" src="../../images/basic/soldout.png" wx:if="{{item.shop_stock==1}}"></image>
+                <image class="list-banner" src="{{item.shop_cover}}"></image>
+              </view>
+
+              <!--test-->
+              <view class='list-detail'>
+                <view class="list-detail-title">{{item.shop_name}}</view>
+                <view class="list-detail-size">
+                  <view class="para">
+                    尺寸:
+                    <text class="size">{{item.shop_length}} * {{item.shop_width}} * {{item.shop_height}}</text>
+                  </view>
+
+                  <!--<view class="para">
+                    宽度:
+                    <text class="size">{{item.shop_width}}cm</text>
+                  </view>
+                  <view class="para">
+                    高度:
+                    <text class="size">{{item.shop_height}}cm</text>
+                  </view>-->
+                </view>
+                <view class="list-detail-price">市场价：
+                  <text class='price'>{{item.shop_price}}</text>
+                </view>
+              </view>
+              <!--<navigator url="../miao/miao?shop_id={{item.id}}" open-type="navigate" class="list-buy">
+                <image src="{{hammer}}"></image> 进入滚动秒拍
+              </navigator>-->
+
+              <!--test-->
+              <view class="list-buy" data-shopid='{{item.id}}' data-stock="{{item.shop_stock}}" bindtap="pai">
+                <image src="{{hammer}}"></image> 进入滚动秒拍
+              </view>
+
+              <!--test-->
+            </view>
+          </block>
+
+          <!--循环列表数据结束-->
+        </view>
+      </view>
+    </block>
+
+    <!--循环列表开始-->
+
+    <!--占位符开始-->
+    <view class="gift"></view>
+
+    <!--占位符结束-->
+  </scroll-view>
+
+  <!--底部区域开始-->
+  <view class="footer">
+    <view class="tel" bindtap='dail'>
+      <image src="../../images/index/tel.png"></image>
+      <text>拨打电话</text>
+    </view>
+    <navigator class="search" url="../success/success" open-type="navigate">已成交查询</navigator>
+    <navigator class="rule" url="../rules/rules" open-type="navigate">秒拍规则</navigator>
+  </view>
+
+  <!--底部区域结束-->
+</view>
+
+<!--container end-->
